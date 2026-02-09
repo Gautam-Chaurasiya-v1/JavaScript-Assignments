@@ -21,9 +21,34 @@
   - `npm run test-compressWord`
 */
 
-
+// edge case - empty array + no duplicates 
 function compressWords(arr) {
   // Your code here
+  let count = 1
+  const ans = []
+  const n = arr.length
+
+  for (let i = 0; i < n; i++) {
+    if ((i != n - 1) && (arr[i] != arr[i + 1])) {
+      let ele = arr[i]
+      if (count > 1) ele += count.toString(10)
+      ans.push(ele)
+      count = 1
+    }
+    else if (i != n - 1) {
+      count++
+    }
+  }
+
+  if (arr.length > 0) {
+    let ele = arr[n - 1]
+    if (count > 1) ele += count.toString(10)
+    ans.push(ele)
+  }
+
+  
+  return ans
+
 }
 
 

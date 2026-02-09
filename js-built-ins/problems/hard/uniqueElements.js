@@ -20,6 +20,15 @@
 
 function getUniqueElements(arr) {
   // Your code here
+  const set = new Set(arr)
+  
+  const ans = []
+
+  for(const ele of set){
+    ans.push(ele)
+  }
+
+  return ans
 }
 
 module.exports = getUniqueElements;
