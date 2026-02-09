@@ -20,8 +20,29 @@
   Once you've implemented the logic, test your code by running
   - `npm run test-compressString`
 */
+
+// edge case of 1 and empty string 
+
 function compression(str) {
   // Your code here
+  let ans = ""
+  let count = 1
+
+  for(let i=0;i<str.length;i++){
+    if( ( i!=str.length-1 ) &&  (str[i] != str[i+1])){
+      ans += str[i]
+      if(count != 1)ans += count.toString(10)
+      count = 1
+    }
+    else if( i != str.length-1){
+      count++
+    }
+  }
+
+  if(str != "") ans +=  str[str.length-1]
+  if(count != 1)ans += count.toString(10)
+
+  return ans 
 }
 
 module.exports = compression;

@@ -22,5 +22,11 @@
 */
 function nonrepeat(str) {
   // Your code here
+  
+  for(const ele of str){
+    if(str.indexOf(ele) === str.lastIndexOf(ele))return ele
+  }
+
+  return null
 }
 module.exports = nonrepeat;

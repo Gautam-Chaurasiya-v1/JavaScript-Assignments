@@ -23,6 +23,17 @@
 
 function reverseInteger(num) {
   // Your code here
+  let neg = 1
+
+  if(num<0){ 
+    neg = -1 
+    num *= -1
+  } 
+
+  let str = num.toString(10)
+  str = str.split("").reverse().join("")
+  
+  return Number(str)*neg
 }
 
 module.exports = reverseInteger;

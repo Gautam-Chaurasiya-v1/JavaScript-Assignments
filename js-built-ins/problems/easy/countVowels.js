@@ -27,6 +27,16 @@
 
 function countVowels(str) {
   // Your code here
+  let freq = 0
+
+  for(let alpha of str){
+    alpha = alpha.toLowerCase()
+    if(alpha === 'a' || alpha === 'e' || alpha === 'i' || alpha === 'o' || alpha === 'u'){
+      freq += 1
+    }
+  }
+
+  return freq
 }
 
 module.exports = { countVowels };
