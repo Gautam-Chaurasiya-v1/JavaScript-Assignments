@@ -12,6 +12,37 @@
 */
 
 class Todo {
+    todos  
+
+    constructor(){
+     todos = []
+    }
+
+    add(todo){
+      todos.push(todo)
+    }
+
+    remove(indexOfTodo){
+      todos.splice(indexOfTodo,1)
+    }
+
+    update(index, updatedTodo){
+
+      if(index < todos.length)todos.splice(index,1,updatedTodo)
+    }
+
+    getAll(){
+      return todos
+    }
+    
+    get(indexOfTodo){
+     if(indexOfTodo >= todos.length)return null
+     return todos[indexOfTodo]
+    }
+
+    clear(){
+      todos.splice(0,todos.length)
+    }
 
 }
 
